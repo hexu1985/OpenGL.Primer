@@ -1,0 +1,19 @@
+// fPhong.glsl
+// Fragmet shader for per-pixel Phong shading.
+
+varying vec3 N;
+varying vec3 L;
+uniform sampler2D texMap;
+
+void main()
+{
+    vec3 Normal = normalize(N);
+    vec3 Light  = normalize(L);
+
+    float Kd = max(dot(Normal, Light), 0.0);
+
+    vec4 diffuse  = Kd * gl_FrontMaterial.diffuse;
+    vec4 texColor = texture2D(texMap, gl_TexCoord[0].st);
+
+    gl_FragColor = diffuse*texColor;
+}
