@@ -3,7 +3,7 @@ RM = rm -f
 CC = gcc
 CFLAGS = -Wall -g
 INCLUDES = 
-LDFLAGS = -lglut -lGL -lGLU -lXmu -lX11  -lm
+LDFLAGS = -lglut -lGL -lGLU -lm
 LDPATH =
 
 SOURCES = $(shell ls *.c)
