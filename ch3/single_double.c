@@ -13,7 +13,7 @@
 #include <stdlib.h>
 
 static GLfloat spin = 0.0;
-    int singleb, doubleb;
+int singleb, doubleb;
 
 void displayd(void)
 {
@@ -37,7 +37,7 @@ void spinDisplay (void)
 {
     spin = spin + 2.0;
     if (spin > 360.0)
-	spin = spin - 360.0;
+        spin = spin - 360.0;
 	glutSetWindow(singleb);
 	glLoadIdentity();
     glRotatef (spin, 0.0, 0.0, 1.0);
@@ -57,8 +57,8 @@ void myinit (void)
 
 void mouse(int btn, int state, int x, int y)
 {
-if(btn==GLUT_LEFT_BUTTON && state==GLUT_DOWN)  glutIdleFunc(spinDisplay);
-if(btn==GLUT_MIDDLE_BUTTON && state==GLUT_DOWN)   glutIdleFunc(NULL);
+    if(btn==GLUT_LEFT_BUTTON && state==GLUT_DOWN)  glutIdleFunc(spinDisplay);
+    if(btn==GLUT_MIDDLE_BUTTON && state==GLUT_DOWN)   glutIdleFunc(NULL);
 }
 
 void myReshape(int w, int h)
@@ -67,11 +67,11 @@ void myReshape(int w, int h)
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     if (w <= h) 
-	glOrtho (-50.0, 50.0, -50.0*(GLfloat)h/(GLfloat)w, 
-	    50.0*(GLfloat)h/(GLfloat)w, -1.0, 1.0);
+        glOrtho (-50.0, 50.0, -50.0*(GLfloat)h/(GLfloat)w, 
+                50.0*(GLfloat)h/(GLfloat)w, -1.0, 1.0);
     else 
-	glOrtho (-50.0*(GLfloat)w/(GLfloat)h, 
-	    50.0*(GLfloat)w/(GLfloat)h, -50.0, 50.0, -1.0, 1.0);
+        glOrtho (-50.0*(GLfloat)w/(GLfloat)h, 
+                50.0*(GLfloat)w/(GLfloat)h, -50.0, 50.0, -1.0, 1.0);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity ();
 }
@@ -92,7 +92,7 @@ int main(int argc, char** argv)
     glutIdleFunc (spinDisplay);
     glutMouseFunc (mouse);
 	glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB);
-        glutInitWindowPosition(310,0);
+    glutInitWindowPosition(310,0);
 	doubleb=glutCreateWindow("double buffered");
     myinit ();
 	glutDisplayFunc(displayd);

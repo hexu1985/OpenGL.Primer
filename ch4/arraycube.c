@@ -12,13 +12,13 @@ cube */
 #include <GL/glut.h>
 #endif
 
-	GLfloat vertices[][3] = {{-1.0,-1.0,-1.0},{1.0,-1.0,-1.0},
-	{1.0,1.0,-1.0}, {-1.0,1.0,-1.0}, {-1.0,-1.0,1.0}, 
-	{1.0,-1.0,1.0}, {1.0,1.0,1.0}, {-1.0,1.0,1.0}};
+GLfloat vertices[][3] = {{-1.0,-1.0,-1.0},{1.0,-1.0,-1.0},
+    {1.0,1.0,-1.0}, {-1.0,1.0,-1.0}, {-1.0,-1.0,1.0}, 
+    {1.0,-1.0,1.0}, {1.0,1.0,1.0}, {-1.0,1.0,1.0}};
 
-	GLfloat colors[][3] = {{1.0,0.0,0.0},{0.0,1.0,1.0},
-	{1.0,1.0,0.0}, {0.0,1.0,0.0}, {0.0,0.0,1.0}, 
-	{1.0,0.0,1.0}};
+GLfloat colors[][3] = {{1.0,0.0,0.0},{0.0,1.0,1.0},
+    {1.0,1.0,0.0}, {0.0,1.0,0.0}, {0.0,0.0,1.0}, 
+    {1.0,0.0,1.0}};
 
 void polygon(int a, int b, int c , int d)
 {
@@ -58,7 +58,7 @@ void display()
    and draw, swap buffers */
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        glMatrixMode(GL_MODELVIEW);
+    glMatrixMode(GL_MODELVIEW);
 	gluLookAt(1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 	cube();
 	glutSwapBuffers();

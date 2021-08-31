@@ -37,7 +37,7 @@ int main(int argc, char** argv)
 	glutInitWindowSize(500,500);
 	glutInitWindowPosition(0,0); 
 	glutCreateWindow("cube"); 
-        glutReshapeFunc(reshape);
+    glutReshapeFunc(reshape);
 	glutDisplayFunc(display);
 	init();
 	glutMainLoop();
